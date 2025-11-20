@@ -1,16 +1,29 @@
-import React from "react";
-import Header from "./components/molecules/organisms/Header";
-import HomePage from "./components/molecules/organisms/pages/HomePage";
+import './App.css';
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1 flex justify-center p-6">
-        <div className="w-full max-w-5xl">
-          <HomePage />
-        </div>
-      </main>
+    <div className="App">
+      <header className="App-header">
+        <img src="Octocat.png" className="App-logo" alt="logo" />
+        <p>
+          GitHub Codespaces <span className="heart">♥️</span> React
+        </p>
+        <p className="small">
+          Edit <code>src/App.jsx</code> and save to reload.
+        </p>
+        <p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </p>
+      </header>
     </div>
   );
 }
+
+export default App;
