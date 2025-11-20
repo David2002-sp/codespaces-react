@@ -6,8 +6,8 @@ export default function Header() {
   const { user, logout } = useAuth();
 
   return (
-    <header className="bg-white shadow-sm p-600 flex justify-between">
-      <h1 className="font-semibold text-slate-800">Prueba Frontend</h1>
+    <header className="bg-white shadow-sm p-600 flex justify-between bg-red-500">
+      <h1 className="font-semibold text-slate-800 text-white">Prueba Frontend</h1>
 
       {user && (
         <div className="flex items-center gap-4">
