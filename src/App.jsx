@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/molecules/organisms/Header";
 import HomePage from "./components/molecules/organisms/pages/HomePage";
 import { AuthProvider } from "./context/AuthContext"; // importa tu provider
+import './App.css';
 
 export default function App() {
   return (

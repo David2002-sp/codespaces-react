@@ -29,10 +29,10 @@ export default function LoginCard() {
   }
 
   return (
-    <div className="bg-white shadow p-6 rounded max-w-md mx-auto">
-      <h2 className="text-xl font-semibold mb-4">Iniciar sesión</h2>
+    <div className="bg-white shadow p-6 rounded max-w-md mx-auto flex flex-col items-center">
+      <h2 className="text-xl font-semibold mb-6 text-center">Iniciar sesión</h2>
 
-      <form className="space-y-4" onSubmit={handleSubmit}>
+      <form className="w-full flex flex-col items-center space-y-4" onSubmit={handleSubmit}>
         <LoginFields
           username={username}
           setUsername={setUsername}
@@ -41,9 +41,9 @@ export default function LoginCard() {
           disabled={loading}
         />
 
-        {error && <p className="text-sm text-red-600">{error}</p>}
+        {error && <p className="text-sm text-red-600 text-center">{error}</p>}
 
-        <div className="flex justify-end">
+        <div className="flex justify-center w-full">
           <Button type="submit" disabled={loading}>
             {loading ? <Spinner /> : "Ingresar"}
           </Button>

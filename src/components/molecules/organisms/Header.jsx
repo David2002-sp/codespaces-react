@@ -6,13 +6,24 @@ export default function Header() {
   const { user, logout } = useAuth();
 
   return (
-    <header className="bg-white shadow-sm p-600 flex justify-between bg-red-500">
-      <h1 className="font-semibold text-slate-800 text-white">Prueba Frontend</h1>
+    <header className="shadow-sm p-6 flex items-center bg-red-500 justify-between">
+      {/* Contenedor del título */}
+      <h1 className={`text-white text-xl font-bold ${user ? "" : "mx-auto"}`}>
+        Prueba Frontend
+      </h1>
 
+      {/* Bloque de usuario */}
       {user && (
         <div className="flex items-center gap-4">
-          <span className="text-sm text-slate-600">Hola, <strong>{user.username}</strong></span>
-          <Button onClick={logout} className="text-sm text-red-600 hover:underline">Cerrar sesión</Button>
+          <span className="text-sm text-white">
+            Hola, <strong>{user.username}</strong>
+          </span>
+          <Button
+            onClick={logout}
+            className="text-sm text-white hover:underline bg-red-700 px-3 py-1 rounded"
+          >
+            Cerrar sesión
+          </Button>
         </div>
       )}
     </header>

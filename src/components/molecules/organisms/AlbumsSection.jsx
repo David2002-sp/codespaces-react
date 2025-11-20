@@ -40,32 +40,29 @@ export default function AlbumsSection() {
   }, []);
 
   return (
-    <section className="py-8 px-6">
-      <div className="bg-white/80 shadow-xl rounded-xl p-6 border border-slate-200 backdrop-blur-sm">
+    <section className="py-6 px-4">
+      <div className="bg-white/80 shadow-md rounded-lg p-4 border border-slate-200 backdrop-blur-sm">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6 border-b pb-3">
-          <h2 className="text-xl font-bold text-slate-800">🎵 Álbumes</h2>
-          <div className="text-sm text-slate-500">{albums.length} cargados</div>
+        <div className="flex items-center justify-between mb-4 border-b pb-2">
+          <h2 className="text-lg font-semibold text-slate-800">🎵 Álbumes</h2>
+          <div className="text-xs text-slate-500">{albums.length} cargados</div>
         </div>
 
         {/* Error */}
         {error && (
-          <div className="mb-4 text-sm text-red-600 bg-red-50/80 p-3 rounded-md border border-red-200">
+          <div className="mb-3 text-xs text-red-600 bg-red-50/80 p-2 rounded-md border border-red-200">
             {error}
           </div>
         )}
 
         {/* Table */}
         <div className="overflow-x-auto rounded-lg border border-slate-200">
-          <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <table className="min-w-full divide-y divide-slate-200 text-xs">
             <TableHeaders />
             <tbody className="bg-white/70 divide-y divide-slate-100">
               {albums.length === 0 && !loading && (
                 <tr>
-                  <td
-                    colSpan="3"
-                    className="px-6 py-8 text-center text-slate-500 italic"
-                  >
+                  <td colSpan="3" className="px-4 py-6 text-center text-slate-500 italic">
                     No hay registros cargados.
                   </td>
                 </tr>
@@ -78,9 +75,9 @@ export default function AlbumsSection() {
                     idx % 2 === 0 ? "bg-slate-50/60" : "bg-white/60"
                   }`}
                 >
-                  <td className="px-6 py-4">{a.id}</td>
-                  <td className="px-6 py-4">{a.userId}</td>
-                  <td className="px-6 py-4">{a.title}</td>
+                  <td className="px-4 py-2">{a.id}</td>
+                  <td className="px-4 py-2">{a.userId}</td>
+                  <td className="px-4 py-2">{a.title}</td>
                 </tr>
               ))}
             </tbody>
@@ -88,28 +85,28 @@ export default function AlbumsSection() {
         </div>
 
         {/* Footer */}
-        <div className="mt-6 flex items-center gap-4">
+        <div className="mt-4 flex items-center gap-3">
           {!allLoaded ? (
             <Button
               onClick={loadMore}
               disabled={loading}
-              className={`px-5 py-2 rounded-md font-medium transition ${
+              className={`px-4 py-1.5 rounded-md font-medium text-sm transition ${
                 loading
-                  ? "bg-slate-200 text-slate-500 cursor-not-allowed"
+                  ? "bg-slate-200 text-slate-500 cursor-not-allowed "
                   : "bg-indigo-600 text-white hover:bg-indigo-700"
               }`}
             >
               {loading ? "Cargando..." : "Ver más"}
             </Button>
           ) : (
-            <span className="text-sm text-green-600 flex items-center gap-2">
+            <span className="text-xs text-green-600 flex items-center gap-1">
               ✅ Todos los registros cargados.
             </span>
           )}
 
           {loading && (
             <div className="ml-2">
-              <Spinner />
+              <Spinner size="sm" />
             </div>
           )}
 
